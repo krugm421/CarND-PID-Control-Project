@@ -33,9 +33,9 @@ I decided to manually tune the parameters considering the tendencies each parame
 I started with all parameters at 0, first increasing the P gain till I was able to reach the desired speed in roughly 3 seconds. After that I increased the D gain until I was satisfied with the oscillation and set the I gain to a relatively small value to ensure steady state accuracy. The parameters I ended up with are: 
 
 
-P_long - 10.0
-I_long - 0.0001
-D_long - 10.0
+* P_long - 10.0
+* I_long - 0.0001
+* D_long - 10.0
 
 ## Lateral controler tuning
 
@@ -45,9 +45,9 @@ I again started increasing the P gain until the vehicles cross track error was o
 
 The parameters I used are:
 
-P_lat - 0.1
-I_lat - 0.002
-D_lat - 1.0
+* P_lat - 0.1
+* I_lat - 0.002
+* D_lat - 1.0
 
 With this parameter set, the controller is able to keep the vehicle on-track at a speed set point of 30 mph.
 
