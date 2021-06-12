@@ -17,7 +17,7 @@ class PID {
    * Initialize PID.
    * @param (Kp_, Ki_, Kd_) The initial PID coefficients
    */
-  void Init(double Kp_, double Ki_, double Kd_);
+  void Init(double Kp_, double Ki_, double Kd_, char* controllerName_);
 
   /**
    * Update the PID error variables given cross track error.
@@ -45,6 +45,13 @@ class PID {
   double Kp;
   double Ki;
   double Kd;
+
+  /**
+   * Previous cross tracking error 
+   */
+  double cte_prev;
+
+  char* controllerName;
 };
 
 #endif  // PID_H
