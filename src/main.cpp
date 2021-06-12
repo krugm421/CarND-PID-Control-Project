@@ -42,7 +42,8 @@ int main() {
   PID pid_longitudinal;
   // Initialize the pid variable.
   //pid_lateral.Init(0.15, 0.01, 6.0);
-  pid_lateral.Init(0.12, 0.0035, 1.0, "Lateral Controler"); // good at 50 mph
+  pid_lateral.Init(0.1, 0.002, 1.0, "Lateral Controler"); // good at 50 mph
+  //pid_lateral.Init(0.11, 0.0035, 1.0, "Lateral Controler"); // good at 50 mph
   pid_longitudinal.Init(10.0, 0.0001, 10.0, "Longitudinal Controler");
 
   h.onMessage([&pid_lateral, &pid_longitudinal](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 
@@ -65,7 +66,7 @@ int main() {
           double angle = std::stod(j[1]["steering_angle"].get<string>());
           double steer_value = 0.0;
           double throttle = 0.0;
-          double speed_setpoint = 50.0;
+          double speed_setpoint = 30.0;
 
           /**
            * TODO: Calculate steering value here, remember the steering value is
